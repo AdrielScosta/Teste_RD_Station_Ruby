@@ -31,11 +31,11 @@ class CustomerSuccessBalancing
       end
     end
 
-    res = resultado.max_by { |item| item[:count] }
+    resultadoMaior = resultado.max_by { |item| item[:count] }
 
-    resultado_count = resultado.empty? ? ['1', '2'] : resultado.select { |item| item[:count] == res[:count] }
+    resultado_count = resultado.empty? ? ['1', '2'] : resultado.select { |item| item[:count] == resultadoMaior[:count] }
 
-    resultado_count.length > 1 ? 0 : res[:id]
+    resultado_count.length > 1 ? 0 : resultadoMaior[:id]
   end
 end
 
